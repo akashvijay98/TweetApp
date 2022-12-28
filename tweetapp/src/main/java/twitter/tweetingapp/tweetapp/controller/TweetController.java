@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import  twitter.tweetingapp.tweetapp.domain.Tweets;
 import  twitter.tweetingapp.tweetapp.service.TweetService;
-import twitter.tweetingapp.tweetapp.service.TweetService;
 
 import java.util.List;
 
@@ -18,6 +17,7 @@ public class TweetController {
 
     @Autowired
     private TweetService tweetService;
+
 
 
     @PostMapping("/Tweet")
@@ -35,5 +35,6 @@ public class TweetController {
     public List<Tweets> getTweets(){
         return tweetService.getAllTweets();
     }
+
 
 }
