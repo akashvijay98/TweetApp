@@ -1,5 +1,6 @@
 package twitter.tweetingapp.tweetapp.service;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 import  twitter.tweetingapp.tweetapp.domain.Users;
@@ -16,7 +17,7 @@ public class UserService {
         this.user = user;
     }
 
-
+    @Cacheable(key="#id",value="itemCache")
     public  Users getUserDetails(UUID id){
         try {
             return user.findById(id).orElseThrow(ChangeSetPersister.NotFoundException::new);

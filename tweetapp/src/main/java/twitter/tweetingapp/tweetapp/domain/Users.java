@@ -3,12 +3,13 @@ package twitter.tweetingapp.tweetapp.domain;
 import jakarta.persistence.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.io.Serializable;
 import java.util.UUID;
 
 @Entity
 @Table(name = "users")
 
-public class Users {
+public class Users implements Serializable {
 
     @Id
     @GeneratedValue(generator = "uuid2")
