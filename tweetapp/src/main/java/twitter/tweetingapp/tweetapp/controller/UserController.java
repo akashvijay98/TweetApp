@@ -1,6 +1,7 @@
 package twitter.tweetingapp.tweetapp.controller;
 
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 import  twitter.tweetingapp.tweetapp.domain.Users;
 import  twitter.tweetingapp.tweetapp.service.UserService;
@@ -25,6 +26,7 @@ public class UserController {
 
         return userService.postUserDetails(userInfo);
     }
+
 
     @GetMapping("/User/{id}")
     Users getUser(@PathVariable String id){
